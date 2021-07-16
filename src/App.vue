@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Header />
-    <Main />
+    <Main :filmList="filmList" />
   </div>
 </template>
 
@@ -92,6 +92,7 @@ import Main from "./components/Main.vue";
     created(){
     axios.get('https://api.themoviedb.org/3/search/movie?api_key=f9f2d73c3435d93318563278430d4304&query=ritorno+al+futuro').then((result)=>{
       this.filmList=result.data.results;
+      console.log(this.filmList)
     })
 
   },
