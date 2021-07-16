@@ -17,6 +17,12 @@ import Main from "./components/Main.vue";
     Main
   },
 
+  methods: {
+            onclickshow(){
+            document.getElementById('buttonclick').style.display = "block"   //todo $emit
+            }
+  },                                             
+
   data: function(){
       return{
         filmList: [],

@@ -13,7 +13,8 @@
         </div>
 
         <div class="user-options">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/VisualEditor_-_Icon_-_Search-big.svg/1200px-VisualEditor_-_Icon_-_Search-big.svg.png" alt="">
+            <img @click = 'onclickshow' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/VisualEditor_-_Icon_-_Search-big.svg/1200px-VisualEditor_-_Icon_-_Search-big.svg.png" alt="">
+            <input id = "buttonclick" type="text">
             <span>BAMBINI</span>
             <img src="https://spng.pngfind.com/pngs/s/4-49136_oojs-ui-icon-bell-bell-icon-blue-png.png" alt="">
             <img src="https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg" alt="">
@@ -62,13 +63,17 @@
         .user-options{
             display: flex;
             align-items: center;
-            width: 20%;
+            width: 25%;
             justify-content: space-evenly;
             margin: 0 20px;
             img{
                 width: 40px;
                 height: 40px;
                 background-color: grey;
+            }
+
+            .buttonclick{
+                display:none;
             }
 
             img:nth-child(3){

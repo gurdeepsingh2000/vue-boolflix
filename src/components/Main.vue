@@ -1,7 +1,7 @@
 <template>
     <div class="body-container">
          <h1>ORIGINALI NETFLIX</h1>
-         <div>
+         <div class="columns">
              <Card v-for="film in filmList" 
              :key="film.id" 
              :original_title="film.original_title"
@@ -21,14 +21,20 @@ import Card from "./Card.vue"
         },
         props:{
             filmList: Array
-        }
+        },
     }
+
+    
 </script>
 
 <style lang="scss" scoped>
     .body-container{
     h1{
         color:white
+    }
+    .columns{
+        display: flex;
+        justify-content: center;
     }
 }
 </style>
