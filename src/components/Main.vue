@@ -1,13 +1,15 @@
 <template>
     <div class="body-container">
-         <h1>ORIGINALI NETFLIX</h1>
+        <h1>ORIGINALI NETFLIX</h1>
+        <div class="columns-container">
          <div class="columns">
-             <Card v-for="film in filmList" 
+             <Card class="inner-card" v-for="film in filmList" 
              :key="film.id" 
              :original_title="film.original_title"
             :title="film.title"
             :original_language="film.original_language"
             :vote_average="film.vote_average" />/>
+            </div>
         </div>
     </div>
 </template>
@@ -29,12 +31,22 @@ import Card from "./Card.vue"
 
 <style lang="scss" scoped>
     .body-container{
+        .columns-container{
+            display: flex;
+            justify-content: center;
+        }
     h1{
         color:white
     }
     .columns{
         display: flex;
-        justify-content: center;
+        flex-wrap: wrap;
+        max-width: 1600px;
+
+        .inner-card{
+            max-width: 400px;
+            margin: 0 20px
+        }
     }
 }
 </style>

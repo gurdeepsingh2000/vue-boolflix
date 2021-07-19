@@ -9,12 +9,11 @@
                 <li>Originali</li>
                 <li>Aggiunti di recente</li>
                 <li>La mia Lista</li>
-            </ul>
+            </ul> 
         </div>
 
         <div class="user-options">
-            <img @click = 'onclickshow' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/VisualEditor_-_Icon_-_Search-big.svg/1200px-VisualEditor_-_Icon_-_Search-big.svg.png" alt="">
-            <input id = "buttonclick" type="text">
+            <input placeholder="Inserisci il nome di un fim" type="text" v-model="userinput"  @keyup.enter="$emit('search',userinput)">
             <span>BAMBINI</span>
             <img src="https://spng.pngfind.com/pngs/s/4-49136_oojs-ui-icon-bell-bell-icon-blue-png.png" alt="">
             <img src="https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg" alt="">
@@ -26,6 +25,11 @@
 <script>
     export default {
         name:'Header',
+        data() {
+            return{
+                userinput: ''
+            } 
+        }
     }
 </script>
 
