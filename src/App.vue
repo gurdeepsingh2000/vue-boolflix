@@ -36,7 +36,7 @@ import Main from "./components/Main.vue";
         return this.filmListFiltered = this.filmList
         
       }
-      axios.get(`https://api.themoviedb.org/3/search/movie?api_key=f9f2d73c3435d93318563278430d4304&query=${searchString}`).then((results) => {
+      axios.get(`https://api.themoviedb.org/3/search/multi?api_key=f9f2d73c3435d93318563278430d4304&query=${searchString}`).then((results) => {
       this.filmListFiltered = results.data.results
      })
     }

@@ -6,6 +6,7 @@
                 <h3>Titolo Originale: {{original_title}}</h3>
                 <h4>Lingua: {{original_language}}</h4>
                 <h3>Voto: {{vote_average}}</h3>
+                <h4>Lingua: <img class="flag" :src="FlagSrc(original_language)" alt="flag"></h4>
             </div>
     </div>
 </template>
@@ -24,6 +25,9 @@
        methods:{
            completeSrc(partialSrc){
                return `http://image.tmdb.org/t/p/w500/${partialSrc}`
+           },
+           FlagSrc(CountryLanguage){
+               return require('../assets/' + CountryLanguage + '.svg')
            }
        }
     }
