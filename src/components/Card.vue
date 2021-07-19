@@ -1,7 +1,7 @@
 <template>
     <div class="cover">
-        <img src="https://image.tmdb.org/t/p/w342/hQq8xZe5uLjFzSBt4LanNP7SQjl.jpg">
         <div class="inner">
+            <img :src="completeSrc(image)" alt="prova">
                 <h2>{{title}}</h2>
                 <h3>Titolo Originale: {{original_title}}</h3>
                 <h4>Lingua: {{original_language}}</h4>
@@ -14,12 +14,20 @@
     export default {
         name:'Card',
         props:{
+        image:String,
         original_title:String,
         title:String,
         original_language:String,
         vote_average:Number,
     },
+
+       methods:{
+           completeSrc(partialSrc){
+               return `http://image.tmdb.org/t/p/w500/${partialSrc}`
+           }
+       }
     }
+
 </script>
 
 <style lang="scss" scoped>

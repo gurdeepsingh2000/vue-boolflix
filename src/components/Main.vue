@@ -8,7 +8,10 @@
              :original_title="film.original_title"
             :title="film.title"
             :original_language="film.original_language"
-            :vote_average="film.vote_average" />/>
+            :vote_average="film.vote_average"
+            :completeSrc="film.poster_path"
+            :image="film.poster_path"
+                />
             </div>
         </div>
     </div>
@@ -31,22 +34,24 @@ import Card from "./Card.vue"
 
 <style lang="scss" scoped>
     .body-container{
+
         .columns-container{
             display: flex;
+
+            .columns{
+            display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            margin-left: 50px;
+
+            .inner-card{
+                width: calc(100% /3 - 40px);
+            }
+    }
         }
     h1{
         color:white
     }
-    .columns{
-        display: flex;
-        flex-wrap: wrap;
-        max-width: 1600px;
 
-        .inner-card{
-            max-width: 400px;
-            margin: 0 20px
-        }
-    }
 }
 </style>
