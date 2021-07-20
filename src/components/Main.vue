@@ -45,7 +45,7 @@ import Card from "./Card.vue"
             margin-left: 50px;
 
             .inner-card{
-                width: calc(100% /3 - 40px);
+                width: calc(100% / 3 - 30px);
             }
     }
         }
