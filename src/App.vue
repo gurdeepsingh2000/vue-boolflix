@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
+  <div id= "App">
     <Header @search='searchMovie' />
-    <Main :filmList="filmListFiltered" />
+    <Main :filmList="filmListFiltered"  :filmListFiltered="filmListFiltered" />
   </div>
 </template>
 
@@ -21,6 +21,7 @@ import Main from "./components/Main.vue";
       return{
         filmList: [],
         filmListFiltered: [],
+        seriesList: []
         }
   },
 
@@ -36,10 +37,11 @@ import Main from "./components/Main.vue";
         return this.filmListFiltered = this.filmList
         
       }
-      axios.get(`https://api.themoviedb.org/3/search/multi?api_key=f9f2d73c3435d93318563278430d4304&query=${searchString}`).then((results) => {
-      this.filmListFiltered = results.data.results
-     })
-    }
+        axios.get(`https://api.themoviedb.org/3/search/multi?api_key=f9f2d73c3435d93318563278430d4304&query=${searchString}`).then((results) => {
+        this.filmListFiltered = results.data.results
+      })
+     },
+
     }
   }
     

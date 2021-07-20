@@ -34,6 +34,7 @@ import Card from "./Card.vue"
 
 <style lang="scss" scoped>
     .body-container{
+        background: black;
 
         .columns-container{
             display: flex;
@@ -42,10 +43,11 @@ import Card from "./Card.vue"
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            margin-left: 50px;
+            width:100%;
 
             .inner-card{
-                width: calc(100% / 3 - 30px);
+                width: calc(100% / 4 );
+                height: 664px;
             }
     }
         }

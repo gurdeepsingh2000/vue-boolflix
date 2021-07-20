@@ -15,7 +15,7 @@
         <div class="user-options">
             <input placeholder="Inserisci il nome di un fim" type="text" v-model="userinput"  @keyup.enter="$emit('search',userinput)">
             <span>BAMBINI</span>
-            <img src="https://spng.pngfind.com/pngs/s/4-49136_oojs-ui-icon-bell-bell-icon-blue-png.png" alt="">
+            <div><i class="fas fa-bell"></i></div>
             <img src="https://ih1.redbubble.net/image.618427277.3222/flat,800x800,075,f.u2.jpg" alt="">
         </div>
 
@@ -38,7 +38,7 @@
     .navbar{
         display: flex;
         background-color: black;
-        height: 80px;
+        height: auto;
         width: 100%;
         align-items:center ;
 
@@ -48,7 +48,6 @@
         }
 
         .list-menu{
-            background-color:green;
             flex-grow: 1;
             ul{
                 display: flex;
@@ -61,23 +60,25 @@
                 };
             }
         }
-        i{
-            background-color: green;
-        }
+
+
+        .fa-bell{
+                font-size:30px;
+                color: #fff;
+            }
+        
         .user-options{
             display: flex;
             align-items: center;
             width: 25%;
             justify-content: space-evenly;
             margin: 0 20px;
+
+
             img{
                 width: 40px;
                 height: 40px;
                 background-color: grey;
-            }
-
-            .buttonclick{
-                display:none;
             }
 
             img:nth-child(3){
@@ -86,7 +87,7 @@
                 }
 
             span{
-                color: red;
+                color: white;
                 font-size: 20px;
             }
         }
