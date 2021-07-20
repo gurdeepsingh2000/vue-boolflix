@@ -28,7 +28,11 @@
                return `http://image.tmdb.org/t/p/w500/${partialSrc}`
            },
            FlagSrc(CountryLanguage){
-               return require('../assets/' + CountryLanguage + '.svg')
+                if(CountryLanguage === "en") {
+                    return require('../assets/' + 'us' + '.svg')
+                } else {
+                    return require('../assets/' + CountryLanguage + '.svg')
+                }
            }
        }
     }
