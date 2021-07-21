@@ -1,8 +1,7 @@
 <template>
     <div class="cover">
         <div class="inner">
-            <img :src="completeSrc(image)" alt="prova">
-            </div>
+            <img :src="completeSrc(image)">
             <div class="description">
                 <h2>{{title}}</h2>
                 <h3>Titolo Originale: {{original_title}}</h3>
@@ -11,6 +10,8 @@
                 <h4>Lingua: <img :src="FlagSrc(original_language)" alt="flag"></h4>
                 <div class="star"><i v-for="n in 5" :key="n" class="fa-star" :class="n <= vote ? 'fas': 'far'"></i></div>
             </div>
+            </div>
+        
         </div>
 
 </template>
@@ -25,7 +26,6 @@
         original_language:String,
         vote_average:Number,
     },
-
     data() {
         return {
             vote: Math.round(this.vote_average /2)
@@ -33,7 +33,6 @@
     },
     
     
-
        methods:{
            completeSrc(partialSrc){
                return `http://image.tmdb.org/t/p/w500/${partialSrc}`
@@ -42,7 +41,6 @@
                 if(CountryLanguage === "en") {
                     return require('../assets/' + 'us' + '.svg')
                 }
-
                 else if(CountryLanguage === "sv"){
                         return require('../assets/' + 'se' + '.svg')
                 }
@@ -53,44 +51,28 @@
            }
        }
     }
-
 </script>
 
 <style lang="scss" scoped>
-    .cover{
-        color: rgba($color: #fff, $alpha: 1);
-        background: black;
-        width:50%;
-    }
+    .description{
+            width: 500px;
+            height: 100%;
+            position: absolute;
+            top: 2%;
+            padding: 50% 50px;
+            opacity: 0;
 
-    .inner{
-        height: 370px;
-        position: relative;
-
-
-        img{
-            height: auto;
-            width:100%
-        }
-        &:hover{
-            opacity: 0.2;
-            background: black;
-            transition: .5s ease;
-            color: white;
-            height: 170px;
-        }
-    }
-
-    
-
-        h4:nth-child(5){
-            img{
-                margin-left: 10px;
-                width: 40px;
+            &:hover{
+                transition: ease-in-out 0.4s;
+                opacity: 1;
+                background: rgba($color: #000000, $alpha: 0.8);
+                color:white
             }
-    }
-
-    .star{
-        color: yellow;
+        h4 img{
+            width: 40px ;
+        }
+        .star{
+            color: yellow;
+        }
     }
 </style>

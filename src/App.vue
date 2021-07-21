@@ -9,14 +9,12 @@
 import axios from 'axios';
 import Header from "./components/Header.vue";
 import Main from "./components/Main.vue";
-
   export default {
     name: 'App',
     components: {
     Header,
     Main
   },                                         
-
   data: function(){
       return{
         filmList: [],
@@ -24,8 +22,6 @@ import Main from "./components/Main.vue";
         seriesList: []
         }
   },
-
-
     created(){
     axios.get('https://api.themoviedb.org/3/movie/popular?api_key=f9f2d73c3435d93318563278430d4304').then((results) => {
       this.filmList = results.data.results
@@ -41,7 +37,6 @@ import Main from "./components/Main.vue";
         this.filmListFiltered = results.data.results
       })
      },
-
     }
   }
     
@@ -49,5 +44,4 @@ import Main from "./components/Main.vue";
 
 <style lang="scss" scoped>
 @import "/style/app.scss"
-
 </style>

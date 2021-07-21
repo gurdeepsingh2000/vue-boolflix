@@ -28,32 +28,29 @@ import Card from "./Card.vue"
             filmList: Array
         },
     }
-
     
 </script>
 
 <style lang="scss" scoped>
     .body-container{
         background: black;
+    }
 
-        .columns-container{
-            display: flex;
-
-            .columns{
+    .columns-container{
+        display: flex;
+        width: 100%;
+        padding: 80px;
+    
+        .columns{
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            width:100%;
 
             .inner-card{
-                width: calc(100% / 4 );
-                height: 664px;
+                position: relative;
+                width: calc(100% / 3) ;
+                padding: 20px;
             }
-    }
         }
-    h1{
-        color:white
     }
-
-}
 </style>
